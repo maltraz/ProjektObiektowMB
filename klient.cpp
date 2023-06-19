@@ -53,7 +53,16 @@ void Klient::zapiszKlientaTekstowo(vector<Klient>& klienci, string filename) {
     ofstream file(filename);
     if (file.is_open()) {
         for (auto& klient : klienci) {
-            file << klient.imie << "," << klient.nazwisko << "," << klient.adres << "," << klient.plec << endl;
+            file << klient.imie << ", " << klient.nazwisko << ", " << klient.adres << ", ";
+            if(klient.plec==1){
+                file << "mezczyzna "<< endl;            }
+            if(klient.plec==2){
+                file << "kobieta "<< endl;            }
+            if(klient.plec==3){
+                file << "robot "<< endl;            }
+            if(klient.plec==4){
+                file << "helikopter_bojowy "<< endl;            }
+
         }
         file.close();
         cout << "Dane klientow zostaly zapisane do pliku Tekstowego" << filename << "!" << endl;

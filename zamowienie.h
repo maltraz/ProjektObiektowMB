@@ -5,6 +5,8 @@
 
 using namespace std;
 
+enum SposobPlatnosci {przelew, gotowka, blik, natura};
+
 class Zamowienie {
 public:
     string produkt;
@@ -13,8 +15,9 @@ public:
     float cena;
     string dataZamowienia;
     float pelnaWartosc;
-    string sposobPlacenia;
+    SposobPlatnosci sposobPlacenia;
     string klijentelia;
+
     void dodajZamowienie(vector<Zamowienie>& zamowienia, vector<string>& produkty);
     void edytujZamowienie(vector<Zamowienie>& zamowienia);
     vector<string> PobierzProduktyZListy(string filename);
